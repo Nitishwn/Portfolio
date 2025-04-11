@@ -1,6 +1,104 @@
 import { motion, Variants } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import useGSAP from '../hooks/useGSAP';
+import { useGSAPContext } from '../hooks/useGSAP';
+import { animateAboutSection } from '../utils/gsapAnimations';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
+  const aboutSectionRef = useGSAP(animateAboutSection, []);
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+  
+  // Enhanced GSAP animations
+  useGSAPContext((context) => {
+    // Timeline animation with GSAP
+    if (timelineRef.current) {
+      const timelineItems = timelineRef.current.querySelectorAll('.timeline-item');
+      const timelineDots = timelineRef.current.querySelectorAll('.timeline-dot');
+      const timelineLines = timelineRef.current.querySelectorAll('.timeline-line');
+      
+      context.add(() => {
+        // Create a ScrollTrigger for the timeline
+        gsap.from(timelineItems, {
+          x: -50,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: timelineRef.current,
+            start: 'top 80%',
+            end: 'bottom 70%',
+            toggleActions: 'play none none reverse',
+          }
+        });
+        
+        // Animate timeline dots
+        gsap.from(timelineDots, {
+          scale: 0,
+          stagger: 0.2,
+          duration: 0.5,
+          delay: 0.5,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: timelineRef.current,
+            start: 'top 80%',
+            end: 'bottom 70%',
+            toggleActions: 'play none none reverse',
+          }
+        });
+        
+        // Animate timeline connecting lines
+        gsap.from(timelineLines, {
+          scaleY: 0,
+          transformOrigin: 'top center',
+          stagger: 0.2,
+          duration: 0.8,
+          delay: 0.7,
+          ease: 'power1.inOut',
+          scrollTrigger: {
+            trigger: timelineRef.current,
+            start: 'top 80%',
+            end: 'bottom 70%',
+            toggleActions: 'play none none reverse',
+          }
+        });
+      });
+    }
+    
+    // Stats counter animation
+    if (statsRef.current) {
+      const statValues = statsRef.current.querySelectorAll('.stat-value');
+      
+      context.add(() => {
+        statValues.forEach((stat) => {
+          const value = stat.getAttribute('data-value') || '';
+          const numValue = parseInt(value.replace(/\D/g, ''));
+          
+          gsap.from(stat, {
+            textContent: 0,
+            duration: 2,
+            ease: 'power2.out',
+            snap: { textContent: 1 },
+            stagger: 0.2,
+            scrollTrigger: {
+              trigger: statsRef.current,
+              start: 'top 80%',
+              toggleActions: 'play none none none',
+            },
+            onUpdate: function() {
+              // @ts-ignore
+              stat.textContent = Math.ceil(this.targets()[0].textContent) + (value.includes('+') ? '+' : '');
+            }
+          });
+        });
+      });
+    }
+  }, []);
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
