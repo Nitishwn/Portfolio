@@ -155,7 +155,7 @@ const HeroSection = () => {
                 whileHover="hover"
               >
                 <img 
-                  src="https://replit.com/@nitishwani094/PersonalPortfolio#client/src/components/Nitish_home_photo.jpg" 
+                  src="/src/components/Nitish_home_photo.jpg" 
                   alt="Nitish Wani" 
                   className="w-64 h-64 sm:w-80 sm:h-80 object-cover"
                 />
