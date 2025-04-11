@@ -28,7 +28,7 @@ const BackToTop = () => {
     hidden: { 
       opacity: 0, 
       y: 20, 
-      scale: 0.8, 
+      scale: 0.8,
       rotate: -45 
     },
     visible: { 
@@ -66,23 +66,32 @@ const BackToTop = () => {
   };
 
   const arrowVariants: Variants = {
+    initial: {
+      y: 0
+    },
     hover: {
-      y: [-4, 0, -4],
+      y: -4,
       transition: {
-        duration: 1,
-        repeat: Infinity,
+        yoyo: Infinity,
+        duration: 0.8,
         ease: "easeInOut"
       }
     }
   };
 
-  const pulseAnimation = {
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      repeatType: "reverse",
-      ease: "easeInOut"
+  const glowVariants: Variants = {
+    initial: {
+      opacity: 0.3,
+      scale: 1
+    },
+    animate: {
+      opacity: [0.3, 0.5, 0.3],
+      scale: [1, 1.2, 1],
+      transition: {
+        repeat: Infinity,
+        duration: 2,
+        ease: "easeInOut"
+      }
     }
   };
 
@@ -94,10 +103,7 @@ const BackToTop = () => {
           className="fixed bottom-8 right-8 p-3 bg-primary-600 text-white rounded-full shadow-lg z-50"
           variants={buttonVariants}
           initial="hidden"
-          animate={isVisible ? {
-            ...buttonVariants.visible,
-            ...pulseAnimation
-          } : "visible"}
+          animate="visible"
           exit="exit"
           whileHover="hover"
           whileTap="tap"
@@ -106,20 +112,14 @@ const BackToTop = () => {
           <motion.i 
             className="fas fa-arrow-up"
             variants={arrowVariants}
+            initial="initial"
             whileHover="hover"
           ></motion.i>
           <motion.div
             className="absolute -inset-1 rounded-full bg-primary-400 -z-10 opacity-30 blur-sm"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut"
-            }}
+            variants={glowVariants}
+            initial="initial"
+            animate="animate"
           />
         </motion.button>
       )}

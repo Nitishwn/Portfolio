@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
-type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark';
 
 /**
  * Custom hook for managing theme toggle functionality
  */
-const useThemeToggle = () => {
+export const useThemeToggle = () => {
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
