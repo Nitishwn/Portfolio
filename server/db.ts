@@ -1,6 +1,8 @@
 import { drizzle } from 'drizzle-orm/node-postgres';
-import { Client } from 'pg';
+import pg from 'pg';
 import * as schema from '../shared/schema';
+
+const { Client } = pg;
 
 // Initialize PostgreSQL client
 const client = new Client({

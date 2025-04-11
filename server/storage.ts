@@ -73,16 +73,31 @@ export class PgStorage implements IStorage {
   }
 
   async createProject(project: InsertProject): Promise<Project> {
-    const result = await db.insert(projects).values(project).returning();
+    // Make sure technologies is an array for PostgreSQL
+    const projectData = {
+      ...project,
+      technologies: Array.isArray(project.technologies) ? project.technologies : []
+    };
+    const result = await db.insert(projects).values(projectData).returning();
     return result[0];
   }
 
   async updateProject(id: number, project: Partial<InsertProject>): Promise<Project | undefined> {
+    // Prepare update data
+    const updateData: Record<string, any> = {
+      ...project,
+      updatedAt: new Date()
+    };
+    
+    // Make sure technologies is an array if it exists
+    if (updateData.technologies) {
+      updateData.technologies = Array.isArray(updateData.technologies) 
+        ? updateData.technologies 
+        : [];
+    }
+    
     const result = await db.update(projects)
-      .set({
-        ...project,
-        updatedAt: new Date()
-      })
+      .set(updateData)
       .where(eq(projects.id, id))
       .returning();
     return result[0];
@@ -235,7 +250,15 @@ export class MemStorage implements IStorage {
   async createProject(project: InsertProject): Promise<Project> {
     const id = this.projectId++;
     const now = new Date();
-    const newProject: Project = { ...project, id, createdAt: now, updatedAt: now };
+    // Ensure technologies is an array
+    const technologies = Array.isArray(project.technologies) ? [...project.technologies] : [];
+    const newProject: Project = { 
+      ...project, 
+      technologies,
+      id, 
+      createdAt: now, 
+      updatedAt: now 
+    };
     this.projects.set(id, newProject);
     return newProject;
   }
