@@ -264,19 +264,19 @@ const AboutSection = () => {
               className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
               variants={textVariants}
             >
-              I'm a passionate full-stack developer with over 5 years of experience creating beautiful, functional, and user-centered digital experiences. I believe in the power of technology to transform and improve the lives of people around the world.
+              I’m a passionate and project-driven tech enthusiast with a strong foundation in Data Science, AI, and Machine Learning, currently working on real-world projects that merge intelligent algorithms with IoT, computer vision, and scientific data. I believe in the power of technology to transform and improve the lives of people around the world.
             </motion.p>
             <motion.p 
               className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
               variants={textVariants}
             >
-              I graduated with a Bachelor's degree in Computer Science from the University of Technology, where I developed a strong foundation in software development principles and practices. Since then, I've worked with various technologies and frameworks, constantly expanding my skill set and staying up-to-date with the latest industry trends.
+              I am currently persuing  Electronics and Communication Engineering with specialization in Artificial Intelligence and Machine Learning, where I developed a strong foundation in ML Algorithms, Python programming and AI fundamentals. Since then, I've worked with various technologies and frameworks, constantly expanding my skill set and staying up-to-date with the latest industry trends.
             </motion.p>
             <motion.p 
               className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
               variants={textVariants}
             >
-              When I'm not coding, you'll find me exploring hiking trails, experimenting with new recipes in the kitchen, or contributing to open-source projects. I'm a lifelong learner who's always eager to take on new challenges and collaborate with like-minded individuals.
+              When I'm not coding, you'll find me exploring music, experimenting with my start-up driven mind, or contributing to open-source projects. I'm a lifelong learner who's always eager to take on new challenges and collaborate with like-minded individuals.
             </motion.p>
             
             <motion.div 
@@ -287,9 +287,9 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               {[
-                { value: "5+", label: "Years Experience", index: 0 },
-                { value: "50+", label: "Projects Completed", index: 1 },
-                { value: "20+", label: "Happy Clients", index: 2 }
+                { value: "0", label: "Years Experience", index: 0 },
+                { value: "10+", label: "Projects Completed", index: 1 },
+                { value: "20+", label: "Happy Birthdays done", index: 2 }
               ].map((stat) => (
                 <motion.div 
                   key={stat.label}
@@ -349,22 +349,17 @@ const AboutSection = () => {
                 viewport={{ once: true }}
               >
                 {[
+                  
                   {
-                    title: "Senior Developer at TechSolutions Inc.",
-                    period: "2020 - Present",
-                    description: "Leading development of enterprise-level web applications and mentoring junior developers.",
-                    index: 0
-                  },
-                  {
-                    title: "Web Developer at Digital Crafts LLC",
-                    period: "2018 - 2020",
-                    description: "Worked on client projects focusing on responsive design and user experience.",
+                    title: "Research Intern at MIT-WPU",
+                    period: "2024 - 2025",
+                    description: "Worked on automating hydroponic system and analysing the Plant Diseases in the hydroponic plants.",
                     index: 1
                   },
                   {
-                    title: "BSc in Computer Science",
-                    period: "University of Technology, 2014 - 2018",
-                    description: "Specialized in software engineering with a focus on web technologies.",
+                    title: "BTech ECE AIML",
+                    period: "MIT World Peace University, 2022 - 2026",
+                    description: "Specialized in AIML with a focus on Data Science and ML techniques.",
                     index: 2,
                     isLast: true
                   }

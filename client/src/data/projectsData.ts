@@ -9,8 +9,8 @@ export interface Project {
 
 export const projectsData: Project[] = [
   {
-    title: "E-commerce Platform",
-    description: "A full-featured online store with payment integration, inventory management, and an intuitive admin dashboard.",
+    title: "E-commerce Recommendation System",
+    description: "Developed a recommendation engine using collaborative filtering and content-based techniques to personalize product suggestions for users. Implemented using Scikit-learn and Pandas with a focus on scalability and performance evaluation via metrics like precision and recall.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     demoLink: "#",
