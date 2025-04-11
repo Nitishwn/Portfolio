@@ -265,10 +265,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const newMessage = await storage.createMessage(validatedData.data);
       
-      // Analyze message content with OpenAI if content exists
-      if (validatedData.data.content) {
+      // Analyze message content with OpenAI if message exists
+      if (validatedData.data.message) {
         try {
-          const analysis = await analyzeContactMessage(validatedData.data.content);
+          const analysis = await analyzeContactMessage(validatedData.data.message);
           console.log('Message analysis:', JSON.stringify(analysis));
           
           // You could store this analysis or use it to prioritize messages

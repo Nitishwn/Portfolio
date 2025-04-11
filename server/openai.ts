@@ -17,6 +17,12 @@ export async function generateWelcomeMessage(visitorInfo: {
   try {
     const { timeOfDay = "day", returningVisitor = false, referrer = "direct", browserInfo = "" } = visitorInfo;
     
+    // Handle OpenAI API key not set or invalid
+    if (!process.env.OPENAI_API_KEY || process.env.OPENAI_API_KEY === 'sk-') {
+      console.log('No valid OpenAI API key found, using fallback welcome messages');
+      return getFallbackWelcomeMessage(timeOfDay, returningVisitor);
+    }
+    
     const prompt = `
       Generate a short, friendly welcome message for a visitor to my personal portfolio website.
       
@@ -39,13 +45,58 @@ export async function generateWelcomeMessage(visitorInfo: {
     });
 
     const welcomeMessage = response.choices[0].message.content?.trim() || 
-      "Welcome to my portfolio! I'm excited to share my work with you.";
+      getFallbackWelcomeMessage(timeOfDay, returningVisitor);
     
     return welcomeMessage;
   } catch (error) {
     console.error('Error generating welcome message:', error);
-    return "Welcome to my portfolio! I'm excited to share my work with you.";
+    const { timeOfDay = "day", returningVisitor = false } = visitorInfo;
+    return getFallbackWelcomeMessage(timeOfDay, returningVisitor);
   }
+}
+
+/**
+ * Returns a fallback welcome message based on time of day and visitor status
+ */
+function getFallbackWelcomeMessage(timeOfDay: string, isReturningVisitor: boolean): string {
+  // Time-based messages
+  const timeBasedMessages = {
+    morning: [
+      "Good morning! Welcome to my portfolio showcase.",
+      "Rise and shine! Excited to share my work with you this morning.",
+      "Morning visitor! Thanks for starting your day with my portfolio."
+    ],
+    afternoon: [
+      "Good afternoon! Thanks for visiting my portfolio today.",
+      "Afternoon explorer! Discover my latest projects and skills.",
+      "Welcome! Hope you're having a productive afternoon."
+    ],
+    evening: [
+      "Good evening! Thanks for stopping by my portfolio.",
+      "Evening visitor! Explore my projects at your leisure.",
+      "Welcome! Wind down your day browsing through my work."
+    ],
+    day: [
+      "Welcome to my portfolio! I'm excited to share my work with you.",
+      "Hello there! Explore my projects and get in touch.",
+      "Thanks for visiting! I hope you enjoy browsing my work."
+    ]
+  };
+  
+  // Returning visitor messages
+  const returningMessages = [
+    "Welcome back! Great to see you again.",
+    "Thanks for returning! There's always something new to discover.",
+    "Glad you're back! Feel free to explore my latest updates."
+  ];
+  
+  // Select appropriate message pool
+  const messagePool = isReturningVisitor ? 
+    returningMessages : 
+    timeBasedMessages[timeOfDay as keyof typeof timeBasedMessages] || timeBasedMessages.day;
+  
+  // Return random message from the pool
+  return messagePool[Math.floor(Math.random() * messagePool.length)];
 }
 
 /**
