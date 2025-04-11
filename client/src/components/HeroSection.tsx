@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import useTypingEffect from '../hooks/useTypingEffect';
 import { motion } from 'framer-motion';
+import ParticleBackground from './ParticleBackground';
 
 const HeroSection = () => {
   const typingRef = useRef<HTMLSpanElement>(null);
@@ -83,8 +84,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="pt-24 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-24 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="home" className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-24 overflow-hidden">
+      <ParticleBackground id="hero-particles" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
           className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
           variants={containerVariants}
