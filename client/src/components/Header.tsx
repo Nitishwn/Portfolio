@@ -251,7 +251,7 @@ const Header = () => {
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
           >
-            John<span className="text-secondary-600 dark:text-secondary-400">Doe</span>
+            Nitish<span className="text-secondary-600 dark:text-secondary-400"> Wani</span>
           </motion.a>
           
           {/* Navigation - Desktop */}

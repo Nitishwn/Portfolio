@@ -93,8 +93,8 @@ const HeroSection = () => {
               Hello, I'm
             </p>
             <h1 className="hero-name text-4xl sm:text-5xl md:text-6xl font-poppins font-bold text-gray-900 dark:text-white">
-              <span className="inline-block">John</span>
-              <span className="text-primary-600 dark:text-primary-400 ml-2 inline-block">Doe</span>
+              <span className="inline-block">Nitish</span>
+              <span className="text-primary-600 dark:text-primary-400 ml-2 inline-block">Wani</span>
             </h1>
             <div className="hero-title h-8 sm:h-12">
               <p className="text-xl sm:text-2xl md:text-3xl font-poppins text-secondary-600 dark:text-secondary-400">
@@ -155,8 +155,8 @@ const HeroSection = () => {
                 whileHover="hover"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                  alt="John Doe" 
+                  src="https://replit.com/@nitishwani094/PersonalPortfolio#client/src/components/Nitish_home_photo.jpg" 
+                  alt="Nitish Wani" 
                   className="w-64 h-64 sm:w-80 sm:h-80 object-cover"
                 />
               </motion.div>
