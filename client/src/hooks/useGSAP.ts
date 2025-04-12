@@ -45,8 +45,13 @@ export const useGSAP = (
       }
       
       // Clear ScrollTrigger instances created for this element
-      if (element && gsap.globalTimeline.getChildren().some(t => t.targets?.includes(element))) {
+      if (element) {
         gsap.killTweensOf(element);
+        ScrollTrigger.getAll().forEach(trigger => {
+          if (trigger.vars.trigger === element) {
+            trigger.kill();
+          }
+        });
       }
     };
   }, dependencies);
