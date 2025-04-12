@@ -83,10 +83,10 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-24 overflow-hidden">
       <ParticleBackground id="hero-particles" />
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-7xl relative z-10">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div 
           ref={heroRef}
-          className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
+          className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
         >
           <div className="w-full md:w-1/2 space-y-6">
             <p className="hero-greeting text-lg text-primary-600 dark:text-primary-400 font-medium">
