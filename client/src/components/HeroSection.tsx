@@ -146,7 +146,7 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-          <div className="hero-image-container w-full md:w-1/2 flex justify-center md:justify-end">
+          <div className="hero-image-container w-full md:w-1/2 flex justify-center md:justify-center lg:justify-start">
             <div className="relative">
               <div className="hero-gradient absolute -inset-1 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full blur opacity-30 dark:opacity-40"></div>
               <motion.div
