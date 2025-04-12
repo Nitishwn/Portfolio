@@ -88,7 +88,7 @@ const HeroSection = () => {
           ref={heroRef}
           className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
         >
-          <div className="w-full md:w-1/2 space-y-6">
+          <div className="w-full md:w-1/2 space-y-6 lg:pl-12">
             <p className="hero-greeting text-lg text-primary-600 dark:text-primary-400 font-medium">
               Hello, I'm
             </p>
