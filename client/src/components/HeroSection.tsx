@@ -81,9 +81,9 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative pt-32 pb-24 sm:pt-40 sm:pb-28 md:pt-48 md:pb-32 overflow-hidden">
+    <section id="home" className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 md:pt-40 md:pb-24 overflow-hidden">
       <ParticleBackground id="hero-particles" />
-      <div className="container mx-auto px-9 sm:px-11 lg:px-16 relative z-10">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div 
           ref={heroRef}
           className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
