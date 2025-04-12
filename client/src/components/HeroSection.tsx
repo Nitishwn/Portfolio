@@ -146,7 +146,7 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-          <div className="hero-image-container w-full md:w-1/2 flex justify-center md:justify-center lg:justify-start">
+          <div className="hero-image-container w-full md:w-1/2 flex justify-center md:justify-center lg:justify-end lg:pr-8">
             <div className="relative">
               <div className="hero-gradient absolute -inset-1 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full blur opacity-30 dark:opacity-40"></div>
               <motion.div
@@ -157,7 +157,7 @@ const HeroSection = () => {
                 <img 
                   src="/src/components/Nitish_home_photo.jpg" 
                   alt="Nitish Wani" 
-                  className="w-64 h-64 sm:w-80 sm:h-80 object-cover"
+                  className="w-72 h-72 sm:w-96 sm:h-96 object-cover"
                 />
               </motion.div>
             </div>
