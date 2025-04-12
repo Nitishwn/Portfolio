@@ -7,7 +7,6 @@ import {
   insertSkillSchema, 
   insertResumeSchema 
 } from "../shared/schema";
-import { generateWelcomeMessage, analyzeContactMessage } from "./openai";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // API routes for portfolio data
@@ -265,20 +264,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       const newMessage = await storage.createMessage(validatedData.data);
       
-      // Analyze message content with OpenAI if message exists
-      if (validatedData.data.message) {
-        try {
-          const analysis = await analyzeContactMessage(validatedData.data.message);
-          console.log('Message analysis:', JSON.stringify(analysis));
-          
-          // You could store this analysis or use it to prioritize messages
-          // For example, urgent messages could be flagged or sent as notifications
-        } catch (analysisError) {
-          console.error('Error analyzing message content:', analysisError);
-          // Non-critical error, continue execution
-        }
-      }
-      
       res.status(201).json({ 
         success: true, 
         message: 'Your message has been sent successfully!' 
@@ -337,54 +322,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // OpenAI Integration endpoints
+  // Simple welcome message without OpenAI
   app.get('/api/welcome', async (req: Request, res: Response) => {
-    try {
-      // Get visitor information from query parameters or headers
-      const { returning } = req.query;
-      const referrer = req.get('Referrer') || 'direct';
-      const userAgent = req.get('User-Agent') || '';
-      
-      // Determine time of day based on server time
-      const hour = new Date().getHours();
-      let timeOfDay = 'day';
-      if (hour < 12) timeOfDay = 'morning';
-      else if (hour < 18) timeOfDay = 'afternoon';
-      else timeOfDay = 'evening';
-      
-      // Generate personalized welcome message
-      const welcomeMessage = await generateWelcomeMessage({
-        timeOfDay,
-        returningVisitor: returning === 'true',
-        referrer,
-        browserInfo: userAgent
-      });
-      
-      res.status(200).json({ message: welcomeMessage });
-    } catch (error) {
-      console.error('Error generating welcome message:', error);
-      res.status(500).json({ 
-        error: 'Failed to generate welcome message',
-        message: 'Welcome to my portfolio website!' // Fallback message
-      });
-    }
-  });
-
-  // Enhanced message handling with OpenAI sentiment analysis
-  app.post('/api/messages/analyze', async (req: Request, res: Response) => {
-    try {
-      const { message } = req.body;
-      
-      if (!message || typeof message !== 'string') {
-        return res.status(400).json({ error: 'Valid message text is required' });
-      }
-      
-      const analysis = await analyzeContactMessage(message);
-      res.status(200).json(analysis);
-    } catch (error) {
-      console.error('Error analyzing message:', error);
-      res.status(500).json({ error: 'Failed to analyze message' });
-    }
+    res.status(200).json({ message: 'Welcome to my portfolio website!' });
   });
 
   // Create server
