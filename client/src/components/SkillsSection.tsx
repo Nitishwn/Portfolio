@@ -162,7 +162,7 @@ const SkillsSection = () => {
               className="text-xl font-poppins font-semibold mb-6 text-gray-900 dark:text-white"
               variants={titleVariants}
             >
-              Frontend Development
+              Machine Learning Skills
             </motion.h3>
             
             <motion.div 
@@ -227,7 +227,7 @@ const SkillsSection = () => {
               className="text-xl font-poppins font-semibold mb-6 text-gray-900 dark:text-white"
               variants={titleVariants}
             >
-              Backend Development
+              Data Science tools
             </motion.h3>
             
             <motion.div 

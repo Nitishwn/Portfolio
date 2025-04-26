@@ -3,8 +3,6 @@ export interface Project {
   description: string;
   image: string;
   technologies: string[];
-  demoLink: string;
-  codeLink: string;
 }
 
 export const projectsData: Project[] = [
@@ -12,48 +10,42 @@ export const projectsData: Project[] = [
     title: "E-commerce Recommendation System",
     description: "Developed a recommendation engine using collaborative filtering and content-based techniques to personalize product suggestions for users. Implemented using Scikit-learn and Pandas with a focus on scalability and performance evaluation via metrics like precision and recall.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    demoLink: "#",
-    codeLink: "#"
+    technologies: ["(Market-basket analysis", "Node.js", "Cosine Similarity", "TF-IDF"]
   },
   {
-    title: "Task Management App",
-    description: "A productivity application that helps teams organize tasks, track progress, and meet deadlines effectively.",
+    title: "Fractal Analysis of Geospatial Raster Data",
+    description: "This project analyzes geospatial raster images using the box-counting method to compute their fractal dimensions, revealing the complexity and pattern variations across different images or time.",
     image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-    technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-    demoLink: "#",
-    codeLink: "#"
+    technologies: ["Resterio", "Pandas", "Seaborn"]
   },
   {
-    title: "Fitness Tracking App",
-    description: "An application that allows users to track workouts, set fitness goals, and monitor progress over time.",
+    title: "Fake Product Review Detection",
+    description: "A machine learning project that analyzes customer reviews using natural language processing to identify and classify potentially fake or biased reviews. Achieved over 85 classification accuracy using TF-IDF, sentiment scores, and logistic regression on labeled Amazon product review data.",
     image: "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-    technologies: ["React Native", "Express", "PostgreSQL"],
-    demoLink: "#",
-    codeLink: "#"
+    technologies: ["TF-IDF", "Scikit learn", "NLTK"]
+  },
+  {
+    title: "Smart Hydroponics Monitoring System",
+    description: "assBuilt a smart hydroponics system using ESP32 with real-time pH, TDS, temperature, and humidity sensors, hosted a responsive web dashboard over Wi-Fi Access Point, and integrated Gemini LLM for AI-driven water quality recommendations with ThingSpeak cloud logging.",
+    image: "\hydprns.png",
+    technologies: ["Flask", "Rest API", "NodeMCU"]
   },
   {
     title: "Weather Dashboard",
-    description: "An interactive weather application with real-time data, forecasts, and location-based services.",
+    description: "Developed a weather prediction dashboard using fuzzy logic to classify weather conditions (Sunny, Rainy, Cloudy) based on environmental inputs like temperature, humidity, and moisture.",
     image: "https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-    technologies: ["JavaScript", "CSS3", "Weather API"],
-    demoLink: "#",
-    codeLink: "#"
+    technologies: ["Fuzzy logic", "Pandas", "Weather API"]
   },
   {
-    title: "Real Estate Platform",
-    description: "A comprehensive platform for property listings, virtual tours, and connecting buyers with agents.",
-    image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
-    technologies: ["Next.js", "Strapi CMS", "Mapbox"],
-    demoLink: "#",
-    codeLink: "#"
+    title: "Multi-Vendor e-commerce website for local cloth vendors",
+    description: "Created and deployed an e-commerce website using MERN stack for full stack development project, using authentication, cloudinary and render.",
+    image: "\ecom.png",
+    technologies: ["Next.js", "Vite", "React.js"]
   },
   {
-    title: "Blogging Platform",
-    description: "A feature-rich blogging application with markdown support, comments, and analytics dashboard.",
-    image: "https://images.unsplash.com/photo-1590935217802-a3bfd2a31349?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-    technologies: ["Angular", "Django", "AWS"],
-    demoLink: "#",
-    codeLink: "#"
+    title: "Remote and RFID enabled Door Lock Access Control System",
+    description: "This RFID access control system uses a NodeMCU ESP8266 and RC522 reader to authenticate users via RFID tags. Upon authorization confirmed through the Blynk IoT cloud service, the system controls a solenoid lock via a relay module, enabling secure and remotely monitored access.",
+    image: "\image.png",
+    technologies: ["BLYNK IOT", "Sensor Tech"]
   }
 ];

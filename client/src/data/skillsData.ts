@@ -9,32 +9,32 @@ export interface OtherSkill {
 }
 
 export const frontendSkills: Skill[] = [
-  { name: "HTML/CSS", level: 95 },
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "Vue.js", level: 80 },
-  { name: "Responsive Design", level: 95 }
+  { name: "Python", level: 80 },
+  { name: "NumPy & Pandas", level: 70 },
+  { name: "scikit-learn", level: 85 },
+  { name: "TensorFlow / PyTorch", level: 80 },
+  { name: "Model Evaluation & Tuning", level: 95 }
 ];
 
 export const backendSkills: Skill[] = [
-  { name: "Node.js", level: 85 },
-  { name: "Express", level: 90 },
-  { name: "MongoDB", level: 80 },
-  { name: "PostgreSQL", level: 75 },
-  { name: "API Development", level: 90 }
+  { name: "Matplotlib & Seaborn", level: 85 },
+  { name: "SQL & NoSQL", level: 90 },
+  { name: "Git & Version Control", level: 80 },
+  { name: "Flask/Django", level: 75 },
+  { name: "Tableau & Power BI", level: 90 }
 ];
 
 export const otherSkills: OtherSkill[] = [
   { name: "Git", icon: "fab fa-git-alt" },
   { name: "Docker", icon: "fab fa-docker" },
-  { name: "AWS", icon: "fab fa-aws" },
+  { name: "XGBoost", icon: "fab fa-tree" },
   { name: "Figma", icon: "fab fa-figma" },
-  { name: "Mobile Dev", icon: "fas fa-mobile-alt" },
-  { name: "Database", icon: "fas fa-database" },
-  { name: "DevOps", icon: "fas fa-server" },
-  { name: "CI/CD", icon: "fas fa-code-branch" },
-  { name: "UI/UX", icon: "fas fa-paint-brush" },
-  { name: "Security", icon: "fas fa-lock" },
-  { name: "Performance", icon: "fas fa-tachometer-alt" },
-  { name: "Accessibility", icon: "fas fa-universal-access" }
+  { name: "OpenCV", icon: "fas fa-camera" },
+  { name: "NLTK", icon: "fas fa-language" },
+  { name: "MLflow", icon: "fas fa-chart-line" },
+  { name: "MATLAB", icon: "fas fa-square-root-variable" },
+  { name: "Hugging Face", icon: "fas fa-robot" },
+  { name: "Rasa", icon: "fas fa-microphone" },
+  { name: "Vosk", icon: "fas fa-volume-high" },
+  { name: "Databricks", icon: "fas fa-server" }
 ];

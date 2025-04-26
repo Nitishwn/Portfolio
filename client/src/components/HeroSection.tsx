@@ -13,8 +13,9 @@ const HeroSection = () => {
   const socialIconsRef = useRef<HTMLDivElement>(null);
   
   const typingText = useTypingEffect([
-    "Full Stack Developer", 
-    "UI/UX Enthusiast", 
+    "Machine Learning Buff", 
+    "Passionate about Artificial Intelligence",
+    "Finance Enthusiast",
     "Problem Solver"
   ], 100);
 
@@ -107,7 +108,7 @@ const HeroSection = () => {
               </p>
             </div>
             <p className="hero-description text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-              I build exceptional digital experiences that are functional, beautiful, and accessible. Let's create something amazing together!
+            From scattered numbers to intelligent whispers — playing with data fuels me. Let's create something amazing together!
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <motion.a 
@@ -130,21 +131,47 @@ const HeroSection = () => {
               </motion.a>
             </div>
             <div
-              ref={socialIconsRef}
-              className="flex gap-5 mt-8"
+            ref={socialIconsRef}
+            className="flex gap-5 mt-8"
+          >
+            {/* LinkedIn Link */}
+            <motion.a
+              href="https://www.linkedin.com/in/nitish-wni/" 
+              target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="social-icon w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400"
+              whileHover={{ y: -5, scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              {['linkedin', 'github', 'twitter', 'dribbble'].map((social) => (
-                <motion.a
-                  key={social}
-                  href={`#${social}`}
-                  className="social-icon w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400"
-                  whileHover={{ y: -5, scale: 1.1 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  <i className={`fab fa-${social}`}></i>
-                </motion.a>
-              ))}
-            </div>
+              <i className="fab fa-linkedin"></i>
+            </motion.a>
+
+            {/* GitHub Link */}
+            <motion.a
+              href="https://github.com/Nitishwn" 
+              target="_blank" rel="noopener noreferrer" 
+              aria-label="GitHub"
+              className="social-icon w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400"
+              whileHover={{ y: -5, scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <i className="fab fa-github"></i>
+            </motion.a>
+
+           
+              {/* Email Link */}
+              <motion.a
+              href="mailto:nitishw94@gmail.com" 
+              aria-label="Email" 
+              className="social-icon w-8 h-8 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-primary-600 dark:text-primary-400"
+              whileHover={{ y: -5, scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <i className="fas fa-envelope"></i> 
+            </motion.a>
+
+
+          </div>
           </div>
           <div className="hero-image-container w-full md:w-1/2 flex justify-center md:justify-center lg:justify-end lg:pr-8">
             <div className="relative">

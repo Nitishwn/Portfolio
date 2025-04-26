@@ -190,26 +190,8 @@ const ProjectsSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.4 }}
                 >
-                  <motion.a 
-                    href={project.demoLink} 
-                    className="text-primary-600 hover:text-primary-800 dark:text-primary-400 dark:hover:text-primary-300 font-medium flex items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variants={linkVariants}
-                    whileHover="hover"
-                  >
-                    <i className="fas fa-globe mr-2"></i> Demo
-                  </motion.a>
-                  <motion.a 
-                    href={project.codeLink} 
-                    className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white font-medium flex items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variants={linkVariants}
-                    whileHover="hover"
-                  >
-                    <i className="fab fa-github mr-2"></i> Code
-                  </motion.a>
+                  
+                  
                 </motion.div>
               </motion.div>
             </motion.div>
