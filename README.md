@@ -1,6 +1,6 @@
 # Personal Portfolio Website (Nitish Wani)
 
-Source code for Nitish Wani's personal portfolio, built with React, Vite, TypeScript, Tailwind CSS, and Express.
+Source code for My personal portfolio, built with React, Vite, TypeScript, Tailwind CSS, and Express.
 
 **Live Demo:** [https://Nitishwn.github.io/Portfolio/](https://Nitishwn.github.io/Portfolio/)
 
